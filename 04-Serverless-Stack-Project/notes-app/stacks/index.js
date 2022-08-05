@@ -1,6 +1,7 @@
 import {StorageStack} from './StorageStack';
+import {ApiStack} from './ApiStack';
 
-export default app => {
+const main = app => {
   app.setDefaultFunctionProps({
     runtime: 'nodejs16.x',
     srcPath: 'services',
@@ -8,5 +9,7 @@ export default app => {
       format: 'esm',
     },
   });
-  app.stack(StorageStack);
+  app.stack(StorageStack).stack(ApiStack);
 };
+
+export default main;
