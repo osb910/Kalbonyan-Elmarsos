@@ -1,11 +1,12 @@
 import {ApiStack} from './ApiStack';
 import {StorageStack} from './StorageStack';
+import {AuthStack} from './AuthStack';
 import {App} from '@serverless-stack/resources';
 
 /**
  * @param {App} app
  */
-export default function main(app) {
+const main = app => {
   app.setDefaultFunctionProps({
     runtime: 'nodejs16.x',
     srcPath: 'services',
@@ -13,5 +14,7 @@ export default function main(app) {
       format: 'esm',
     },
   });
-  app.stack(StorageStack).stack(ApiStack);
-}
+  app.stack(StorageStack).stack(ApiStack).stack(AuthStack);
+};
+
+export default main;
