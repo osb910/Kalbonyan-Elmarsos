@@ -1,5 +1,6 @@
 import handler from '../util/handler';
-import * as uuid from 'uuid';
+import pkg from 'uuid';
+const {v1} = pkg;
 import dynamoDb from '../util/dynamoDb';
 // import AWS from 'aws-sdk';
 
@@ -14,7 +15,7 @@ export const main = handler(async evt => {
     Item: {
       // The attributes of the item to be created
       userId: evt.requestContext.authorizer.iam.cognitoIdentity.identityId, // The id of the author
-      noteId: uuid.v1(), // A unique uuid
+      noteId: v1(), // A unique uuid
       content: data.content, // Parsed from request body
       attachment: data.attachment, // Parsed from request body
       createdAt: Date.now(), // Current Unix timestamp
