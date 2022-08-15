@@ -1,7 +1,7 @@
 let readyPlayerCount = 0;
 
 const listen = io => {
-  const pongNamespace = io.of('/pong');
+  const pongNamespace = io.of('/');
   pongNamespace.on('connection', socket => {
     let room;
     console.log('a user connected', socket.id);
