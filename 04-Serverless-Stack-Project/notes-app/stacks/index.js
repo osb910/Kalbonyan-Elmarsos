@@ -1,6 +1,7 @@
 import {StorageStack} from './StorageStack';
 import {ApiStack} from './ApiStack';
 import {AuthStack} from './AuthStack';
+import {FrontendStack} from './FrontendStack';
 
 const main = app => {
   app.setDefaultFunctionProps({
@@ -10,7 +11,7 @@ const main = app => {
       format: 'esm',
     },
   });
-  app.stack(StorageStack).stack(ApiStack).stack(AuthStack);
+  app.stack(StorageStack).stack(ApiStack).stack(AuthStack).stack(FrontendStack);
 };
 
 export default main;
