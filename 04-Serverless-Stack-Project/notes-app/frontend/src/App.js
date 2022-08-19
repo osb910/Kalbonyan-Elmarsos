@@ -4,38 +4,53 @@
  * fix lang context
  */
 
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import React, {useContext} from 'react';
+import styled, {css} from 'styled-components';
+import LanguageContext from './store/language-context';
+import Navigation from './Navigation';
 import Routes from './Routes';
-import Translator from './components/Layout/Translator/Translator';
-import {LinkContainer} from 'react-router-bootstrap';
+import data from './store/content/home';
+import clickSfx from './assets/sfx/Light-Switch-ON_OFF.mp3';
 import './App.css';
 
+const StyledApp = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+  transition: all 400ms ease;
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    ${({lang}) =>
+      lang !== 'ar' &&
+      css`
+        font-family: 'PT Serif', serif;
+      `}
+  }
+
+  &.rtl {
+    direction: rtl;
+    font-family: 'Uthman Taha';
+    font-size: 1.125rem;
+  }
+`;
+
 const App = () => {
+  const {lang} = useContext(LanguageContext);
+  const content = data[lang];
+  document.title = `${content.appName} - ${content.appDesc}`;
   return (
-    <div className='App container py-3'>
-      <Navbar collapseOnSelect bg='light' expand='md' className='mb-3'>
-        <LinkContainer to='/'>
-          <Navbar.Brand className='font-weight-bold text-muted'>
-            Scratch
-          </Navbar.Brand>
-        </LinkContainer>
-        <Navbar.Toggle />
-        <Navbar.Collapse className='justify-content-end'>
-          <Translator />
-          <Nav activeKey={window.location.pathname}>
-            <LinkContainer to='/signup'>
-              <Nav.Link>Signup</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to='/login'>
-              <Nav.Link>Login</Nav.Link>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Routes />
-    </div>
+    <StyledApp className={lang === 'ar' && 'rtl'} lang={lang}>
+      <div className='container py-3'>
+        <Navigation />
+        <Routes />
+        <audio id='click-sfx' src={clickSfx} preload='none'></audio>
+      </div>
+    </StyledApp>
   );
 };
 

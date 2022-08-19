@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import LanguageContext from '../store/language-context';
+import data from '../store/content/home';
 
 const StyledHome = styled.div`
   & .lander {
@@ -11,14 +13,20 @@ const StyledHome = styled.div`
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
   }
+
+  .rtl & .lander h1 {
+    font-family: 'Uthman Taha';
+  }
 `;
 
 const Home = () => {
+  const {lang} = useContext(LanguageContext);
+  const content = data[lang];
   return (
     <StyledHome>
       <div className='lander'>
-        <h1>Scratch</h1>
-        <p className='text-muted'>A simple note taking app</p>
+        <h1>{content.appName}</h1>
+        <p className='text-muted'>{content.appDesc}</p>
       </div>
     </StyledHome>
   );

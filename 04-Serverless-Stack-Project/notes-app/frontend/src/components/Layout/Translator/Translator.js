@@ -7,13 +7,13 @@ const bump = keyframes`
     transform: scale(1);
   }
   10% {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   30% {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.08);
   }
   100% {
     transform: scale(1);
@@ -30,17 +30,22 @@ const StyledTranslator = styled.div.attrs(props => ({ariaLabel: 'Language'}))`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5em;
-  margin: 0;
+  padding: 0.3em 0.6em;
+  margin: 0 0.8em;
   border-radius: 12px;
-  background-color: var(--prim-color);
+  background-color: var(--sept-color);
   cursor: pointer;
   font-family: 'Calibri';
   color: var(--hex-color);
 
+  .rtl & .current-lang {
+    font-family: Lotus;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
   & img {
-    width: 1.5rem;
-    margin-bottom: 0.3em;
+    width: 1.25rem;
+    margin: 0;
     stroke: var(--hex-color);
     color: var(--hex-color);
     border-radius: 50%;
@@ -48,6 +53,8 @@ const StyledTranslator = styled.div.attrs(props => ({ariaLabel: 'Language'}))`
 
   & .current-lang {
     font-weight: 700;
+    padding: 0;
+    margin: 0;
   }
 
   & ul {
@@ -63,7 +70,7 @@ const StyledTranslator = styled.div.attrs(props => ({ariaLabel: 'Language'}))`
     border: 2px solid var(--sec-color);
     box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.2);
     visibility: hidden;
-    top: 1.5rem;
+    top: 2rem;
     opacity: 0;
     transition: opacity 300ms ease-in-out;
   }
@@ -84,7 +91,7 @@ const StyledTranslator = styled.div.attrs(props => ({ariaLabel: 'Language'}))`
   & ul li {
     width: 100%;
     text-align: center;
-    padding: 0.4em 0.6em;
+    padding: 0.3em 0.5em;
     background-color: #fff;
   }
 
@@ -105,7 +112,7 @@ const StyledTranslator = styled.div.attrs(props => ({ariaLabel: 'Language'}))`
   }
 
   &.bump {
-    animation: ${bump} 700ms ease-in-out;
+    animation: ${bump} 600ms ease-in-out;
   }
 `;
 
@@ -118,8 +125,8 @@ const Translator = ({lang, changeLang}) => {
   }, [lang]);
 
   const langDisplay = {
-    en: 'English',
-    ar: 'العربية',
+    en: 'En',
+    ar: 'ع',
   };
   return (
     <StyledTranslator
@@ -129,8 +136,8 @@ const Translator = ({lang, changeLang}) => {
       <img src={globe} alt='Language' />
       <div className='current-lang'>{langDisplay[lang]}</div>
       <ul>
-        <li data-lang='en'>{langDisplay.en}</li>
-        <li data-lang='ar'>{langDisplay.ar}</li>
+        <li data-lang='en'>English</li>
+        <li data-lang='ar'>العربية</li>
       </ul>
     </StyledTranslator>
   );

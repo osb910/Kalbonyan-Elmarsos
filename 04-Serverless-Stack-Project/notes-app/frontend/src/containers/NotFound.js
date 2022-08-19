@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import LanguageContext from '../store/language-context';
+
+import data from '../store/content/misc';
 
 const StyledNotFound = styled.div`
   padding-top: 100px;
@@ -17,16 +20,18 @@ const StyledNotFound = styled.div`
     height: 60vh;
     transform: rotate(-20deg);
     z-index: -1;
-    font-size: 25rem;
+    font-size: 20rem;
     color: #888;
     opacity: 0.6;
   }
 `;
 
 const NotFound = () => {
+  const {lang} = useContext(LanguageContext);
+  const content = data[lang];
   return (
     <StyledNotFound>
-      <h3>Sorry, page not found!</h3>
+      <h3>{content.notFound}</h3>
     </StyledNotFound>
   );
 };
