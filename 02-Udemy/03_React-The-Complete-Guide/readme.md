@@ -11,7 +11,7 @@
   <br/>
 
 - [Section 3 Project Live Demo](https://omarsh-react-max-s03.netlify.app/)
-- [Section 4 Project Live Demo]()
+- [Section 4 Project Live Demo](https://omarsh-react-max-s04.netlify.app/)
 - [Section 5 Project Live Demo]()
 
 ### goals app (S6-S7)
