@@ -3,17 +3,13 @@ import {Auth} from 'aws-amplify';
 import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
 import {useNavigate} from 'react-router-dom';
-import LoaderButton from '../components/UI/LoaderButton';
 import AppContext from '../lib/contextLib';
 import {useFormFields} from '../lib/hooksLib';
 import {onError} from '../lib/errorLib';
 import data from '../lib/content/header';
+import {emailRgx, pwdRgx} from '../lib/utils';
+import LoaderButton from '../components/UI/LoaderButton';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
-// import {Navigate} from 'react-router-dom';
-
-const emailRgx = /^[-.\w%+]+@[-\w]+\.[A-Za-z]{2,6}(\.[A-Z-a-z]{2})?$/;
-const pwdRgx =
-  /(?=^.{8,32}$)((?=.*[\p{L}\d_])(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-|!@"$%&(){}[\]?^'+*/\\]))^.*$/;
 
 const StyledForm = styled.section`
   .rtl & label {
