@@ -1,31 +1,70 @@
-import {useContext} from 'react';
+import {Fragment, useContext} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {LinkContainer} from 'react-router-bootstrap';
-import LanguageContext from './store/language-context';
-import data from './store/content/header';
-import Translator from './components/Layout/Translator/Translator';
+import {Auth} from 'aws-amplify';
+import {useNavigate} from 'react-router-dom';
+
+import AppContext from './lib/contextLib';
+import data from './lib/content/header';
+import Translator from './components/Layout/Translator';
 import styled from 'styled-components';
 
 const StyledNavigation = styled.header`
+  .logo {
+    margin-inline-start: 0.5em;
+  }
+
+  .navbtns {
+    margin-inline-start: 0.5em;
+  }
+
+  .navbtns > * {
+    max-width: fit-content;
+    margin-block: 0.5em;
+    padding-inline: 0.8em;
+  }
+
   .rtl & .logo {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
 
+  & .link {
+    padding: 0.2em;
+  }
+
   .rtl & .link {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-family: Lotus;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
   }
 `;
 
 const Navigation = () => {
-  const {lang, onChangeLang} = useContext(LanguageContext);
+  const nav = useNavigate();
+  const {lang, isAuth, onChangeLang, setIsAuth} = useContext(AppContext);
   const content = data[lang];
 
   const handleTranslator = evt => {
     const newLang = evt.target.dataset.lang;
     if (!newLang || lang === newLang) return;
     onChangeLang(newLang);
+  };
+
+  const logout = async () => {
+    try {
+      await Auth.signOut();
+      setIsAuth('LOGOUT');
+      nav('/login');
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -37,15 +76,23 @@ const Navigation = () => {
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
-        <Navbar.Collapse className='justify-content-end'>
+        <Navbar.Collapse className='navbtns justify-content-end'>
           <Translator lang={lang} changeLang={handleTranslator} />
-          <Nav activeKey={window.location.pathname}>
-            <LinkContainer to='/signup'>
-              <Nav.Link className='link'>{content.signup}</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to='/login'>
-              <Nav.Link className='link'>{content.login}</Nav.Link>
-            </LinkContainer>
+          <Nav className='nav' activeKey={window.location.pathname}>
+            {isAuth ? (
+              <LinkContainer className='link' to='/logout'>
+                <Nav.Link onClick={logout}>{content.logout}</Nav.Link>
+              </LinkContainer>
+            ) : (
+              <Fragment>
+                <LinkContainer className='link' to='/signup'>
+                  <Nav.Link>{content.signup}</Nav.Link>
+                </LinkContainer>
+                <LinkContainer className='link' to='/login'>
+                  <Nav.Link>{content.login}</Nav.Link>
+                </LinkContainer>
+              </Fragment>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -1,12 +1,16 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import LanguageContext from '../store/language-context';
+// import LanguageContext from '../lib/language-context';
+import AppContext from '../lib/contextLib';
 
-import data from '../store/content/misc';
+import data from '../lib/content/misc';
 
 const StyledNotFound = styled.div`
+  max-width: 300px;
+  margin: 0 auto;
   padding-top: 100px;
   text-align: center;
+  flex-wrap: wrap;
 
   &::before {
     content: '404';
@@ -22,12 +26,17 @@ const StyledNotFound = styled.div`
     z-index: -1;
     font-size: 20rem;
     color: #888;
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+
+  & h3 {
+    line-height: 1.4;
   }
 `;
 
 const NotFound = () => {
-  const {lang} = useContext(LanguageContext);
+  // const {lang} = useContext(LanguageContext);
+  const {lang} = useContext(AppContext);
   const content = data[lang];
   return (
     <StyledNotFound>

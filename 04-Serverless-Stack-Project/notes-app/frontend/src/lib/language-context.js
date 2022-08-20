@@ -1,4 +1,5 @@
 import React, {useReducer} from 'react';
+
 const LanguageContext = React.createContext({
   lang: '',
   onChangeLang: () => {},
@@ -19,6 +20,7 @@ const langReducer = (state, action) => {
 
 export const LangProvider = props => {
   const [langState, dispatchLang] = useReducer(langReducer, defaultLangState);
+  console.log(langState);
 
   const translate = lang => {
     click();

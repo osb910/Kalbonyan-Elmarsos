@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import LanguageContext from '../store/language-context';
-import data from '../store/content/home';
+// import LanguageContext from '../lib/language-context';
+import AppContext from '../lib/contextLib';
+import data from '../lib/content/home';
 
 const StyledHome = styled.div`
   & .lander {
@@ -9,18 +10,19 @@ const StyledHome = styled.div`
     text-align: center;
   }
 
-  & .lander h1 {
+  :not(.rtl) & .lander h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
   }
 
-  .rtl & .lander h1 {
-    font-family: 'Uthman Taha';
+  .rtl & .lander p {
+    font-family: Lotus;
+    font-size: 1.2rem;
   }
 `;
 
 const Home = () => {
-  const {lang} = useContext(LanguageContext);
+  const {lang} = useContext(AppContext);
   const content = data[lang];
   return (
     <StyledHome>

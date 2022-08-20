@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {LangProvider} from './store/language-context';
+import {AppProvider} from './lib/contextLib';
 
 Amplify.configure({
   Auth: {
@@ -36,11 +36,11 @@ Amplify.configure({
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 root.render(
   <React.StrictMode>
-    <LangProvider>
+    <AppProvider>
       <Router>
         <App />
       </Router>
-    </LangProvider>
+    </AppProvider>
   </React.StrictMode>
 );
 

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import globe from './globe.svg';
+import globe from '../../assets/img/globe.svg';
 import styled, {keyframes} from 'styled-components';
 
 const bump = keyframes`

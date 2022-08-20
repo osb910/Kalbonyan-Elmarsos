@@ -17,6 +17,7 @@ textarea.form-control,
 input.form-control {
   font-size: 1rem;
 }
+
 input[type='file'] {
   width: 100%;
 }
