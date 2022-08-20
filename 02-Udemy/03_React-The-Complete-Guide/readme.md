@@ -21,7 +21,7 @@
 
 <br/>
 
-- [Section 6 Project Live Demo]()
+- [Section 6 Project Live Demo](https://omarsh-react-max-s06.netlify.app/)
 - [Section 7 Project Live Demo]()
 
 ### Section 8-9 Project
