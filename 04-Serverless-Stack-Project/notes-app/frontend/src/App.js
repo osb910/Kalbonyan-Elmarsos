@@ -10,7 +10,7 @@ import {useNavigate} from 'react-router-dom';
 //  import {onError} from './lib/errorLib';
 import Navigation from './Navigation';
 import data from './store/content/home';
-//  import Pages from './Routes';
+import Pages from './Routes';
 
 import clickSfx from './assets/sfx/Light-Switch-ON_OFF.mp3';
 import './App.css';
@@ -97,7 +97,7 @@ const App = () => {
       {/* {!isAuthenticating && ( */}
       <div dir={lang === 'ar' ? 'rtl' : 'auto'} className='container py-3'>
         <Navigation />
-        {/* <Pages /> */}
+        <Pages />
         <audio id='click-sfx' src={clickSfx} preload='none'></audio>
       </div>
       {/* )} */}
