@@ -1,37 +1,17 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Auth} from 'aws-amplify';
-import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import AppContext from '../lib/contextLib';
 import {useFormFields} from '../lib/hooksLib';
 import {onError} from '../lib/errorLib';
 import data from '../lib/content/header';
 import {emailRgx, pwdRgx} from '../lib/utils';
+import StyledForm from '../components/UI/StyledForm';
 import LoaderButton from '../components/UI/LoaderButton';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 
-const StyledForm = styled.section`
-  .rtl & label {
-    font-size: 1.25rem;
-    font-family: Lotus;
-  }
-
-  & .group {
-    margin-bottom: 0.8em;
-  }
-  @media all and (min-width: 480px) {
-    padding: 60px 0;
-
-    & form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
-`;
-
 const Login = () => {
-  const nav = useNavigate();
   const {lang, isAuth, setIsAuth} = useContext(AppContext);
   const content = data[lang];
   const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +20,18 @@ const Login = () => {
     email: '',
     password: '',
   });
+
+  const nav = useNavigate();
+  const {state} = useLocation();
+
+  useEffect(() => {
+    changeFields({
+      target: {
+        id: 'email',
+        value: state?.email,
+      },
+    });
+  }, [state]);
 
   const validateForm = () => {
     return emailRgx.test(fields.email) && pwdRgx.test(fields.password);
@@ -57,9 +49,13 @@ const Login = () => {
       setIsAuth('LOGIN');
       nav('/');
     } catch (err) {
-      onError(err);
-      setIsLoading(false);
+      // onError(err);
+      if (err.name === 'UserNotConfirmedException') {
+        await Auth.resendSignUp(fields.email);
+        nav('/signup', {state: {email: fields.email}});
+      }
       setIsAuth('LOGOUT');
+      setIsLoading(false);
     }
   };
 
@@ -87,7 +83,7 @@ const Login = () => {
           />
           <Form.Text className='text-muted'>{content.loginPassText}</Form.Text>
         </Form.Group>
-        <Form.Group>{isLoading && <LoadingSpinner lang={lang} />}</Form.Group>
+        {/* <Form.Group>{isLoading && <LoadingSpinner lang={lang} />}</Form.Group> */}
         <LoaderButton
           lang={lang}
           block='true'

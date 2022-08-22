@@ -8,9 +8,12 @@ const data = {
     email: 'Email',
     signupEmailText: 'We never share emails.',
     pass: 'Password',
+    confirmPass: 'Confirm Password',
     loginPassText: 'Is it really you?',
-    signupPassText:
-      'God knows no one can have your password except the server.',
+    signupPassText: 'God knows no one can have it except the server.',
+    verify: 'Verify',
+    confCode: 'Confirmation Code',
+    confCodeText: 'Please check your email for the code.',
   },
   ar: {
     logo: 'صيد الخاطر',
@@ -21,9 +24,13 @@ const data = {
     email: 'بريدك',
     signupEmailText: 'عنوانك محفوظ',
     pass: 'أمارتُك',
+    confirmPass: 'أثبِت أمارتَك',
     loginPassText: 'أأنت أنت؟',
     signupPassText:
       'سرُّك مكتوم لا يطّلع عليه إلا ربُّ العالمين والخادوم الأمين.',
+    verify: 'تحقَّق',
+    confCode: 'رمز التحقق',
+    confCodeText: 'انظر بريدك وأْتِ بالرمز.',
   },
 };
 

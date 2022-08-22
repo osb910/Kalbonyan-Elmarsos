@@ -80,7 +80,7 @@ const Navigation = () => {
           <Translator lang={lang} changeLang={handleTranslator} />
           <Nav className='nav' activeKey={window.location.pathname}>
             {isAuth ? (
-              <LinkContainer className='link' to='/logout'>
+              <LinkContainer className='link' to='/'>
                 <Nav.Link onClick={logout}>{content.logout}</Nav.Link>
               </LinkContainer>
             ) : (
