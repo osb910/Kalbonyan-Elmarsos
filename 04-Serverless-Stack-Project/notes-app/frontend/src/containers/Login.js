@@ -34,7 +34,7 @@ const Login = () => {
     setSubmitMsg(content.tooMuchConfReq);
   };
 
-  const onUnconfirmedUser = async () => {
+  const resendConfirmation = async () => {
     try {
       await Auth.resendSignUp(fields.email);
       setSubmitMsg(content.unconfirmedUserMsg);
@@ -74,7 +74,7 @@ const Login = () => {
       }, 1500);
     } catch (err) {
       if (err.name === 'UserNotConfirmedException') {
-        await onUnconfirmedUser();
+        await resendConfirmation();
       }
       setIsLoading(false);
       setIsAuth('LOGOUT');

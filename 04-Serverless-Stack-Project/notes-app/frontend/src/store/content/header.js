@@ -12,6 +12,7 @@ const data = {
     loginPassText: 'Is it really you?',
     signupPassText: 'God knows no one can have it except the server.',
     verify: 'Verify',
+    userExists: `We know know. Perhaps you'd like to login...`,
     confCode: 'Confirmation Code',
     confCodeText: 'Please check your email for the code.',
     loginSuccess: 'Welcome to your Scratch...',
@@ -33,6 +34,7 @@ const data = {
     signupPassText:
       'سرُّك مكتوم لا يطّلع عليه إلا ربُّ العالمين والخادوم الأمين.',
     verify: 'تحقَّق',
+    userExists: `إنا نعرفك، لعلك تريد أن تفتح سِجلَّك...`,
     confCode: 'رمز التحقق',
     confCodeText: 'انظر بريدك وأْتِ بالرمز.',
     loginSuccess: 'حياك الله في سِجلِّك...',
