@@ -63,7 +63,7 @@ const Navigation = () => {
       await Auth.signOut();
       setTimeout(() => {
         setIsAuth('LOGOUT');
-        const email = currentUser.email;
+        const email = currentUser?.email;
         setCurrentUser({});
         nav('/login', {state: {email}});
       }, 500);

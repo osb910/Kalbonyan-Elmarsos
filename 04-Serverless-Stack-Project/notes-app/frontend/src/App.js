@@ -14,7 +14,7 @@ import Pages from './Routes';
 
 import clickSfx from './assets/sfx/Light-Switch-ON_OFF.mp3';
 import './App.css';
-//  import LoadingSpinner from './components/UI/LoadingSpinner';
+import LoadingSpinner from './components/UI/LoadingSpinner';
 
 const StyledApp = styled.div`
   box-sizing: border-box;
@@ -54,49 +54,45 @@ const StyledApp = styled.div`
 `;
 
 const App = () => {
-  // const [isAuthenticating, setIsAuthenticated] = useState(true);
+  const [isAuthenticating, setIsAuthenticating] = useState(true);
   const {lang, setIsAuth} = useContext(AppContext);
 
-  // const nav = useNavigate();
+  const nav = useNavigate();
 
-  // const onLoad = async () => {
-  //   try {
-  //     const res = await Auth.currentSession();
-  //     console.log(res);
-  //     setIsAuth('LOGIN');
-  //   } catch (err) {
-  //     if (err === 'No current user') {
-  //       nav('/signup');
-  //     } else {
-  //       onError(err);
-  //     }
-  //   }
-  //   setIsAuthenticated();
-  // };
+  const onLoad = async () => {
+    try {
+      const res = await Auth.currentSession();
+      console.log(res);
+      setIsAuth('LOGIN');
+    } catch (err) {
+      if (err === 'No current user') {
+        nav('/login');
+      } else {
+        console.log(err);
+      }
+    }
+    setIsAuthenticating(false);
+  };
 
-  // useEffect(() => {
-  //   onLoad();
-  // }, []);
+  useEffect(() => {
+    onLoad();
+  }, []);
 
   const content = data[lang];
   document.title = `${content.appName} - ${content.appDesc}`;
   document.documentElement.lang = lang;
+
   return (
-    <StyledApp
-      className={lang === 'ar' && 'rtl'}
-      isAuthing={
-        false
-        // isAuthenticating
-      }
-    >
-      {/* {isAuthenticating && <LoadingSpinner lang={lang} />} */}
-      {/* {!isAuthenticating && ( */}
-      <div dir={lang === 'ar' ? 'rtl' : 'auto'} className='container py-3'>
-        <Navigation />
-        <Pages />
-        <audio id='click-sfx' src={clickSfx} preload='none'></audio>
-      </div>
-      {/* )} */}
+    <StyledApp className={lang === 'ar' && 'rtl'} isAuthing={isAuthenticating}>
+      {isAuthenticating ? (
+        <LoadingSpinner lang={lang} />
+      ) : (
+        <div dir={lang === 'ar' ? 'rtl' : 'auto'} className='container py-3'>
+          <Navigation />
+          <Pages />
+          <audio id='click-sfx' src={clickSfx} preload='none'></audio>
+        </div>
+      )}
     </StyledApp>
   );
 };

@@ -52,8 +52,15 @@ const Login = () => {
 
   const submit = async evt => {
     evt.preventDefault();
-    if (isAuth) return;
     setIsLoading(true);
+    if (isAuth) {
+      setCurrentUser({email: fields.email});
+      setSubmitMsg(content.alreadyLoggedIn);
+      setTimeout(() => {
+        setIsLoading(false);
+        nav('/');
+      }, 1500);
+    }
 
     try {
       const signInProcess = await Auth.signIn(fields.email, fields.password);
@@ -69,8 +76,8 @@ const Login = () => {
       if (err.name === 'UserNotConfirmedException') {
         await onUnconfirmedUser();
       }
-      setIsAuth('LOGOUT');
       setIsLoading(false);
+      setIsAuth('LOGOUT');
     }
   };
 
