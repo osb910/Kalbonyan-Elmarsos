@@ -56,7 +56,6 @@ const StyledApp = styled.div`
 const App = () => {
   // const [isAuthenticating, setIsAuthenticated] = useState(true);
   const {lang, setIsAuth} = useContext(AppContext);
-  console.log(lang);
 
   // const nav = useNavigate();
 
@@ -83,9 +82,6 @@ const App = () => {
   document.title = `${content.appName} - ${content.appDesc}`;
   document.documentElement.lang = lang;
   return (
-    // <StyledApp>
-    //   <h1>Scratch</h1>
-    // </StyledApp>
     <StyledApp
       className={lang === 'ar' && 'rtl'}
       isAuthing={
