@@ -5,6 +5,8 @@ const AppContext = createContext({
   onChangeLang: () => {},
   isAuth: null,
   setIsAuth: () => {},
+  currentUser: {},
+  setCurrentUser: () => {},
 });
 
 // const defaultLangState = {
@@ -32,6 +34,10 @@ const appReducer = (state, action) => {
   }
   if (action.type === 'LOGOUT') {
     return {...state, isAuth: false};
+  }
+
+  if (action.type === 'CHANGE_USER') {
+    return {...state, currentUser: action.user};
   }
   // if (action.type === 'STOPAUTHENTICATION') {
   //   return {...state, isAuthenticating: false};
@@ -61,6 +67,10 @@ export const AppProvider = props => {
     localStorage.setItem('auth', JSON.stringify(auth === 'LOGIN'));
   };
 
+  const changeUser = user => {
+    dispatchApp({type: 'CHANGE_USER', user});
+  };
+
   // const stopAuth = () => {
   //   dispatchApp({type: 'STOPAUTHENTICATION'});
   // };
@@ -70,8 +80,10 @@ export const AppProvider = props => {
       value={{
         lang: appState.lang,
         isAuth: appState.isAuth,
+        currentUser: appState.currentUser,
         onChangeLang: translate,
         setIsAuth: authenticate,
+        setCurrentUser: changeUser,
       }}
     >
       {props.children}

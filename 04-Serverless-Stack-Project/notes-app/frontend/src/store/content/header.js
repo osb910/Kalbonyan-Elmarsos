@@ -14,6 +14,9 @@ const data = {
     verify: 'Verify',
     confCode: 'Confirmation Code',
     confCodeText: 'Please check your email for the code.',
+    loginSuccess: 'Welcome to your Scratch...',
+    unconfirmedUserMsg: 'You have to complete your sign up...',
+    tooMuchConfReq: 'Too much requests. Try again after 15 minutes.',
   },
   ar: {
     logo: 'صيد الخاطر',
@@ -31,6 +34,9 @@ const data = {
     verify: 'تحقَّق',
     confCode: 'رمز التحقق',
     confCodeText: 'انظر بريدك وأْتِ بالرمز.',
+    loginSuccess: 'حياك الله في سِجلِّك...',
+    unconfirmedUserMsg: 'لا بد أن تُتمَّ التسجيل...',
+    tooMuchConfReq: 'أكثرتَ الطلب. اصبر ربع ساعة ثم أعِد الكرّة.',
   },
 };
 

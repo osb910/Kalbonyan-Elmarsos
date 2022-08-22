@@ -2,7 +2,7 @@ import {Fragment, useContext} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {LinkContainer} from 'react-router-bootstrap';
-// import {Auth} from 'aws-amplify';
+import {Auth} from 'aws-amplify';
 import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -48,7 +48,8 @@ const StyledNavigation = styled.header`
 
 const Navigation = () => {
   const nav = useNavigate();
-  const {lang, isAuth, onChangeLang, setIsAuth} = useContext(AppContext);
+  const {lang, isAuth, onChangeLang, setIsAuth, currentUser, setCurrentUser} =
+    useContext(AppContext);
   const content = data[lang];
 
   const handleTranslator = evt => {
@@ -58,13 +59,17 @@ const Navigation = () => {
   };
 
   const logout = async () => {
-    // try {
-    //   await Auth.signOut();
-    //   setIsAuth('LOGOUT');
-    //   nav('/login');
-    // } catch (err) {
-    //   console.error(err);
-    // }
+    try {
+      await Auth.signOut();
+      setTimeout(() => {
+        setIsAuth('LOGOUT');
+        const email = currentUser.email;
+        setCurrentUser({});
+        nav('/login', {state: {email}});
+      }, 500);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
