@@ -1,5 +1,5 @@
 const config = {
-  MAX_ATTACHMENT_SIZE: 5000000,
+  MAX_ATTACHMENT_SIZE: 5 * 1024 * 1024,
   // Backend config
   s3: {
     REGION: process.env.REACT_APP_REGION,

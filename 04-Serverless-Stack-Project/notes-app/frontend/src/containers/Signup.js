@@ -13,7 +13,7 @@ import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 const Signup = props => {
   const {lang, isAuth, setIsAuth} = useContext(AppContext);
-  const content = data[lang];
+  const uiText = data[lang];
 
   const [fields, changeFields] = useFormFields({
     email: '',
@@ -42,13 +42,13 @@ const Signup = props => {
   };
 
   const onExcConfReq = () => {
-    setSubmitMsg(content.tooMuchConfReq);
+    setSubmitMsg(uiText.tooMuchConfReq);
   };
 
   const resendConfirmation = async () => {
     try {
       await Auth.resendSignUp(fields.email);
-      setSubmitMsg(content.unconfirmedUserMsg);
+      setSubmitMsg(uiText.unconfirmedUserMsg);
       setTimeout(() => {
         setIsLoading(false);
         setNewUser(fields.email);
@@ -62,7 +62,7 @@ const Signup = props => {
   };
 
   const redirectToLogin = () => {
-    setSubmitMsg(content.userExists);
+    setSubmitMsg(uiText.userExists);
     setTimeout(() => {
       setIsLoading(false);
       nav('/login', {state: {email: fields.email}});
@@ -116,14 +116,14 @@ const Signup = props => {
   const confirmationForm = (
     <Form onSubmit={confirmSubmit}>
       <Form.Group controlId='confirmationCode' size='lg' className='group'>
-        <Form.Label>{content.confCode}</Form.Label>
+        <Form.Label>{uiText.confCode}</Form.Label>
         <Form.Control
           autoFocus
           type='tel'
           onChange={changeFields}
           value={fields.confirmationCode}
         />
-        <Form.Text muted>{content.confCodeText}</Form.Text>
+        <Form.Text muted>{uiText.confCodeText}</Form.Text>
       </Form.Group>
       <Form.Group className='group'>
         <LoaderButton
@@ -135,7 +135,7 @@ const Signup = props => {
           isLoading={isLoading}
           disabled={!validateConfirmationForm()}
         >
-          {content.verify}
+          {uiText.verify}
         </LoaderButton>
         {submitMsg && <Form.Text className='text-muted'>{submitMsg}</Form.Text>}
       </Form.Group>
@@ -145,7 +145,7 @@ const Signup = props => {
   const form = (
     <Form onSubmit={submit}>
       <Form.Group controlId='email' size='lg' className='group'>
-        <Form.Label>{content.email}</Form.Label>
+        <Form.Label>{uiText.email}</Form.Label>
         <Form.Control
           autoFocus
           type='email'
@@ -155,17 +155,17 @@ const Signup = props => {
         />
       </Form.Group>
       <Form.Group controlId='password' size='lg' className='group'>
-        <Form.Label>{content.pass}</Form.Label>
+        <Form.Label>{uiText.pass}</Form.Label>
         <Form.Control
           type='password'
           value={fields.password}
           onChange={changeFields}
           dir='auto'
         />
-        <Form.Text className='text-muted'>{content.signupPassText}</Form.Text>
+        <Form.Text className='text-muted'>{uiText.signupPassText}</Form.Text>
       </Form.Group>
       <Form.Group controlId='confirmPassword' size='lg' className='group'>
-        <Form.Label>{content.confirmPass}</Form.Label>
+        <Form.Label>{uiText.confirmPass}</Form.Label>
         <Form.Control
           type='password'
           onChange={changeFields}
@@ -183,7 +183,7 @@ const Signup = props => {
           isLoading={isLoading}
           disabled={!validateForm()}
         >
-          {content.signup}
+          {uiText.signup}
         </LoaderButton>
         {submitMsg && <Form.Text className='text-muted'>{submitMsg}</Form.Text>}
       </Form.Group>

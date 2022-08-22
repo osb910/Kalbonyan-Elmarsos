@@ -13,7 +13,7 @@ import LoaderButton from '../components/UI/LoaderButton';
 
 const Login = () => {
   const {lang, isAuth, setIsAuth, setCurrentUser} = useContext(AppContext);
-  const content = data[lang];
+  const uiText = data[lang];
 
   const [isLoading, setIsLoading] = useState(false);
   const nav = useNavigate();
@@ -31,13 +31,13 @@ const Login = () => {
   };
 
   const onExcConfReq = () => {
-    setSubmitMsg(content.tooMuchConfReq);
+    setSubmitMsg(uiText.tooMuchConfReq);
   };
 
   const resendConfirmation = async () => {
     try {
       await Auth.resendSignUp(fields.email);
-      setSubmitMsg(content.unconfirmedUserMsg);
+      setSubmitMsg(uiText.unconfirmedUserMsg);
       setTimeout(() => {
         setIsLoading(false);
         nav('/signup', {state: {email: fields.email}});
@@ -55,7 +55,7 @@ const Login = () => {
     setIsLoading(true);
     if (isAuth) {
       setCurrentUser({email: fields.email});
-      setSubmitMsg(content.alreadyLoggedIn);
+      setSubmitMsg(uiText.alreadyLoggedIn);
       setTimeout(() => {
         setIsLoading(false);
         nav('/');
@@ -66,7 +66,7 @@ const Login = () => {
       const signInProcess = await Auth.signIn(fields.email, fields.password);
       console.log(signInProcess);
       setCurrentUser({email: fields.email});
-      setSubmitMsg(content.loginSuccess);
+      setSubmitMsg(uiText.loginSuccess);
       setTimeout(() => {
         setIsLoading(false);
         setIsAuth('LOGIN');
@@ -85,7 +85,7 @@ const Login = () => {
     <StyledForm>
       <Form onSubmit={submit}>
         <Form.Group size='lg' controlId='email' className='group'>
-          <Form.Label>{content.email}</Form.Label>
+          <Form.Label>{uiText.email}</Form.Label>
           <Form.Control
             autoFocus
             type='email'
@@ -93,17 +93,17 @@ const Login = () => {
             onChange={changeFields}
             dir='auto'
           />
-          {/* <Form.Text className='text-muted'>{content.loginEmailText}</Form.Text> */}
+          {/* <Form.Text className='text-muted'>{uiText.loginEmailText}</Form.Text> */}
         </Form.Group>
         <Form.Group size='lg' controlId='password' className='group'>
-          <Form.Label>{content.pass}</Form.Label>
+          <Form.Label>{uiText.pass}</Form.Label>
           <Form.Control
             type='password'
             value={fields.password}
             onChange={changeFields}
             dir='auto'
           />
-          <Form.Text className='text-muted'>{content.loginPassText}</Form.Text>
+          <Form.Text className='text-muted'>{uiText.loginPassText}</Form.Text>
         </Form.Group>
         <Form.Group className='group'>
           <LoaderButton
@@ -114,7 +114,7 @@ const Login = () => {
             isLoading={isLoading}
             disabled={!validateForm()}
           >
-            {content.login}
+            {uiText.login}
           </LoaderButton>
           {submitMsg && (
             <Form.Text className='text-muted'>{submitMsg}</Form.Text>
