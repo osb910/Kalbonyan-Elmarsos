@@ -6,8 +6,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import styled, {css} from 'styled-components';
 import AppContext from './store/app-context';
 import {Auth} from 'aws-amplify';
-import {useNavigate} from 'react-router-dom';
-//  import {onError} from './lib/errorLib';
 import Navigation from './Navigation';
 import data from './store/content/home';
 import Pages from './Routes';
@@ -57,19 +55,15 @@ const App = () => {
   const [isAuthenting, setIsAuthenting] = useState(true);
   const {lang, setIsAuthented} = useContext(AppContext);
 
-  const nav = useNavigate();
-
   const onLoad = async () => {
     try {
       const res = await Auth.currentSession();
       console.log(res);
       setIsAuthented('LOGIN');
     } catch (err) {
-      if (err === 'No current user') {
-        // nav('/login');
-      } else {
-        console.log(err);
-      }
+      console.log(err);
+      // if (err === 'No current user') {
+      // }
     }
     setIsAuthenting(false);
   };
