@@ -54,8 +54,8 @@ const StyledApp = styled.div`
 `;
 
 const App = () => {
-  const [isAuthenticating, setIsAuthenticating] = useState(true);
-  const {lang, setIsAuth} = useContext(AppContext);
+  const [isAuthenting, setIsAuthenting] = useState(true);
+  const {lang, setIsAuthented} = useContext(AppContext);
 
   const nav = useNavigate();
 
@@ -63,15 +63,15 @@ const App = () => {
     try {
       const res = await Auth.currentSession();
       console.log(res);
-      setIsAuth('LOGIN');
+      setIsAuthented('LOGIN');
     } catch (err) {
       if (err === 'No current user') {
-        nav('/login');
+        // nav('/login');
       } else {
         console.log(err);
       }
     }
-    setIsAuthenticating(false);
+    setIsAuthenting(false);
   };
 
   useEffect(() => {
@@ -83,8 +83,8 @@ const App = () => {
   document.documentElement.lang = lang;
 
   return (
-    <StyledApp className={lang === 'ar' && 'rtl'} isAuthing={isAuthenticating}>
-      {isAuthenticating ? (
+    <StyledApp className={lang === 'ar' && 'rtl'} isAuthing={isAuthenting}>
+      {isAuthenting ? (
         <LoadingSpinner lang={lang} />
       ) : (
         <div dir={lang === 'ar' ? 'rtl' : 'auto'} className='container py-3'>

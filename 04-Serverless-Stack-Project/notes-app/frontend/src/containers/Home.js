@@ -6,6 +6,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import {BsPencilSquare} from 'react-icons/bs';
 import AppContext from '../store/app-context';
 import data from '../store/content/home';
+import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 const StyledHome = styled.main`
   & .lander {
@@ -18,14 +19,22 @@ const StyledHome = styled.main`
     font-weight: 600;
   }
 
-  .rtl & .lander p {
+  .rtl & :not(h1) :not(h2) {
     font-family: Lotus;
+  }
+  .rtl & p {
     font-size: 1.2rem;
+  }
+
+  .rtl .pencil-icon {
+    display: inline-block;
+    border: 1px solid red;
+    transform: scaleX(-1);
   }
 `;
 
 const Home = () => {
-  const {lang, isAuth} = useContext(AppContext);
+  const {lang, isAuthented} = useContext(AppContext);
   const uiText = data[lang];
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +43,7 @@ const Home = () => {
 
   useEffect(() => {
     const onLoad = async () => {
-      if (!isAuth) {
+      if (!isAuthented) {
         return;
       }
 
@@ -49,34 +58,36 @@ const Home = () => {
     };
 
     onLoad();
-  }, [isAuth]);
+  }, [isAuthented]);
+
+  const notesDisplay = notes.map(({noteId, content, createdAt}) => (
+    <LinkContainer key={noteId} to={`/notes/${noteId}`}>
+      <ListGroup.Item action dir='auto'>
+        <span className='font-weight-bold'>
+          {content.trim().split('\n')[0]}
+        </span>
+        <br />
+        <span className='text-muted'>
+          {uiText.created}
+          {new Intl.DateTimeFormat(lang === 'ar' ? 'ar-EG' : lang, {
+            timeStyle: 'short',
+            dateStyle: 'short',
+          }).format(new Date(createdAt))}
+        </span>
+      </ListGroup.Item>
+    </LinkContainer>
+  ));
 
   const renderNotesList = notes => {
     return (
       <>
         <LinkContainer to='/notes/new'>
           <ListGroup.Item action className='py-3 text-nowrap text-truncate'>
-            <BsPencilSquare size={17} />{' '}
+            <BsPencilSquare className='pencil-icon' size={17} />{' '}
             <span className='ml-2 font-weight-bold'>{uiText.createNote}</span>
           </ListGroup.Item>
         </LinkContainer>
-        {notes.map(({noteId, content, createdAt}) => (
-          <LinkContainer key={noteId} to={`/notes/${noteId}`}>
-            <ListGroup.Item action dir='auto'>
-              <span className='font-weight-bold'>
-                {content.trim().split('\n')[0]}
-              </span>
-              <br />
-              <span className='text-muted'>
-                {uiText.created}
-                {new Intl.DateTimeFormat(lang === 'ar' ? 'ar-EG' : lang, {
-                  timeStyle: 'short',
-                  dateStyle: 'short',
-                }).format(new Date(createdAt))}
-              </span>
-            </ListGroup.Item>
-          </LinkContainer>
-        ))}
+        {notesDisplay}
       </>
     );
   };
@@ -91,10 +102,11 @@ const Home = () => {
   const notesList = (
     <section className='notes'>
       <h2 className='pb-3 mt-4 mb-3 border-bottom'>{uiText.yourNotes}</h2>
+      {isLoading && <LoadingSpinner lang={lang} />}
       <ListGroup>{!isLoading && renderNotesList(notes)}</ListGroup>
     </section>
   );
-  return <StyledHome>{isAuth ? notesList : lander}</StyledHome>;
+  return <StyledHome>{isAuthented ? notesList : lander}</StyledHome>;
 };
 
 export default Home;

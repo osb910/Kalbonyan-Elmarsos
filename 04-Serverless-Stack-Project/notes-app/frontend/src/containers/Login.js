@@ -12,7 +12,7 @@ import LoaderButton from '../components/UI/LoaderButton';
 // import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 const Login = () => {
-  const {lang, isAuth, setIsAuth, setCurrentUser} = useContext(AppContext);
+  const {lang, setIsAuthented, setCurrentUser} = useContext(AppContext);
   const uiText = data[lang];
 
   const [isLoading, setIsLoading] = useState(false);
@@ -53,14 +53,6 @@ const Login = () => {
   const submit = async evt => {
     evt.preventDefault();
     setIsLoading(true);
-    if (isAuth) {
-      setCurrentUser({email: fields.email});
-      setSubmitMsg(uiText.alreadyLoggedIn);
-      setTimeout(() => {
-        setIsLoading(false);
-        nav('/');
-      }, 1500);
-    }
 
     try {
       const signInProcess = await Auth.signIn(fields.email, fields.password);
@@ -69,15 +61,14 @@ const Login = () => {
       setSubmitMsg(uiText.loginSuccess);
       setTimeout(() => {
         setIsLoading(false);
-        setIsAuth('LOGIN');
-        nav('/');
+        setIsAuthented('LOGIN');
       }, 1500);
     } catch (err) {
-      if (err.name === 'UserNotConfirmedException') {
-        await resendConfirmation();
-      }
+      console.log(err.name, err.message);
+      err.name === 'UserNotConfirmedException' && (await resendConfirmation());
+      err.message === 'Network error' && setSubmitMsg(uiText.netError);
       setIsLoading(false);
-      setIsAuth('LOGOUT');
+      setIsAuthented('LOGOUT');
     }
   };
 

@@ -3,8 +3,8 @@ import React, {createContext, useReducer} from 'react';
 const AppContext = createContext({
   lang: '',
   onChangeLang: () => {},
-  isAuth: null,
-  setIsAuth: () => {},
+  isAuthented: null,
+  setIsAuthented: () => {},
   currentUser: {},
   setCurrentUser: () => {},
 });
@@ -14,12 +14,12 @@ const AppContext = createContext({
 // };
 
 // const defaultAuthState = {
-//   isAuth: JSON.parse(localStorage.getItem('auth')) || false,
+//   isAuthented: JSON.parse(localStorage.getItem('auth')) || false,
 // };
 
 const defaultState = {
   lang: JSON.parse(localStorage.getItem('lang')) || 'en',
-  isAuth: JSON.parse(localStorage.getItem('auth')) || false,
+  isAuthented: JSON.parse(localStorage.getItem('auth')) || false,
 };
 
 const click = () => document.querySelector('#click-sfx').play();
@@ -30,10 +30,10 @@ const appReducer = (state, action) => {
   }
 
   if (action.type === 'LOGIN') {
-    return {...state, isAuth: true};
+    return {...state, isAuthented: true};
   }
   if (action.type === 'LOGOUT') {
-    return {...state, isAuth: false};
+    return {...state, isAuthented: false};
   }
 
   if (action.type === 'CHANGE_USER') {
@@ -79,10 +79,10 @@ export const AppProvider = props => {
     <AppContext.Provider
       value={{
         lang: appState.lang,
-        isAuth: appState.isAuth,
+        isAuthented: appState.isAuthented,
         currentUser: appState.currentUser,
         onChangeLang: translate,
-        setIsAuth: authenticate,
+        setIsAuthented: authenticate,
         setCurrentUser: changeUser,
       }}
     >
@@ -114,10 +114,10 @@ export const AppProvider = props => {
 
 // const authReducer = (state, action) => {
 //   if (action.type === 'LOGIN') {
-//     return {...state, isAuth: true};
+//     return {...state, isAuthented: true};
 //   }
 //   if (action.type === 'LOGOUT') {
-//     return {...state, isAuth: false};
+//     return {...state, isAuthented: false};
 //   }
 //   return defaultAuthState;
 // };
@@ -127,14 +127,14 @@ export const AppProvider = props => {
 
 //   const authenticate = auth => {
 //     dispatchAuth({type: auth});
-//     localStorage.setItem('lang', JSON.stringify(authState.isAuth));
+//     localStorage.setItem('lang', JSON.stringify(authState.isAuthented));
 //   };
 
 //   return (
 //     <AppContext.Provider
 //       value={{
-//         isAuth: authState.isAuth,
-//         setIsAuth: authenticate,
+//         isAuthented: authState.isAuthented,
+//         setIsAuthented: authenticate,
 //       }}
 //     >
 //       {props.children}

@@ -12,7 +12,7 @@ import LoaderButton from '../components/UI/LoaderButton';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 const Signup = props => {
-  const {lang, isAuth, setIsAuth} = useContext(AppContext);
+  const {lang, isAuthented, setIsAuthented} = useContext(AppContext);
   const uiText = data[lang];
 
   const [fields, changeFields] = useFormFields({
@@ -105,7 +105,7 @@ const Signup = props => {
     try {
       await Auth.confirmSignUp(fields.email, fields.confirmationCode);
       await Auth.signIn(fields.email, fields.password);
-      setIsAuth('LOGIN');
+      setIsAuthented('LOGIN');
       setTimeout(() => nav('/'), 2000);
     } catch (err) {
       console.log(err);

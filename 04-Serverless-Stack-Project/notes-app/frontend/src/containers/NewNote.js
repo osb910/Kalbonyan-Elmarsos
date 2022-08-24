@@ -53,8 +53,10 @@ const NewNote = () => {
     setIsLoading(true);
 
     try {
-      const attachment = file.current ? await s3Upload(file.current) : null;
-      await createNote({name: '', content, attachment});
+      if (file.current) {
+        const attachment = await s3Upload(file.current);
+        await createNote({name: '', content, attachment});
+      }
       setTimeout(() => {
         nav('/');
       }, 1000);

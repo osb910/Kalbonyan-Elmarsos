@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {LinkContainer} from 'react-router-bootstrap';
 import {Auth} from 'aws-amplify';
-import {useNavigate} from 'react-router-dom';
+import {useInRouterContext, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 
 import AppContext from './store/app-context';
@@ -48,9 +48,15 @@ const StyledNavigation = styled.header`
 
 const Navigation = () => {
   const nav = useNavigate();
-  const {lang, isAuth, onChangeLang, setIsAuth, currentUser, setCurrentUser} =
-    useContext(AppContext);
-  const content = data[lang];
+  const {
+    lang,
+    isAuthented,
+    setIsAuthented,
+    onChangeLang,
+    currentUser,
+    setCurrentUser,
+  } = useContext(AppContext);
+  const uiText = data[lang];
 
   const handleTranslator = evt => {
     const newLang = evt.target.dataset.lang;
@@ -62,7 +68,7 @@ const Navigation = () => {
     try {
       await Auth.signOut();
       setTimeout(() => {
-        setIsAuth('LOGOUT');
+        setIsAuthented('LOGOUT');
         const email = currentUser?.email;
         setCurrentUser({});
         nav('/login', {state: {email}});
@@ -77,24 +83,29 @@ const Navigation = () => {
       <Navbar collapseOnSelect bg='light' expand='md' className='mb-3'>
         <LinkContainer to='/'>
           <Navbar.Brand className='font-weight-bold text-muted logo'>
-            {content.logo}
+            {uiText.logo}
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
         <Navbar.Collapse className='navbtns justify-content-end'>
           <Translator lang={lang} changeLang={handleTranslator} />
           <Nav className='nav' activeKey={window.location.pathname}>
-            {isAuth ? (
-              <LinkContainer className='link' to='/login'>
-                <Nav.Link onClick={logout}>{content.logout}</Nav.Link>
-              </LinkContainer>
+            {isAuthented ? (
+              <Fragment>
+                <LinkContainer className='link' to='/settings'>
+                  <Nav.Link>{uiText.settings}</Nav.Link>
+                </LinkContainer>
+                <LinkContainer className='link' to='/login'>
+                  <Nav.Link onClick={logout}>{uiText.logout}</Nav.Link>
+                </LinkContainer>
+              </Fragment>
             ) : (
               <Fragment>
                 <LinkContainer className='link' to='/signup'>
-                  <Nav.Link>{content.signup}</Nav.Link>
+                  <Nav.Link>{uiText.signup}</Nav.Link>
                 </LinkContainer>
                 <LinkContainer className='link' to='/login'>
-                  <Nav.Link>{content.login}</Nav.Link>
+                  <Nav.Link>{uiText.login}</Nav.Link>
                 </LinkContainer>
               </Fragment>
             )}

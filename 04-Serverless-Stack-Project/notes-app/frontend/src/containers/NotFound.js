@@ -34,7 +34,6 @@ const StyledNotFound = styled.div`
 `;
 
 const NotFound = () => {
-  // const {lang} = useContext(LanguageContext);
   const {lang} = useContext(AppContext);
   const content = data[lang];
   return (

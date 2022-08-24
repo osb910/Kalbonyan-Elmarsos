@@ -7,6 +7,9 @@ import Signup from './containers/Signup';
 import NewNote from './containers/NewNote';
 import Notes from './containers/Notes';
 import NotFound from './containers/NotFound';
+import Settings from './containers/Settings';
+import AuthentedRoute from './components/AuthentedRoute';
+import UnauthentedRoute from './components/UnauthentedRoute';
 
 const appear = keyframes`
   0% {
@@ -42,10 +45,46 @@ const Pages = () => {
     <StyledPages>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/notes/new' element={<NewNote />} />
-        <Route path='notes/:id' element={<Notes />} />
+        <Route
+          path='/login'
+          element={
+            <UnauthentedRoute>
+              <Login />
+            </UnauthentedRoute>
+          }
+        />
+        <Route
+          path='/signup'
+          element={
+            <UnauthentedRoute>
+              <Signup />
+            </UnauthentedRoute>
+          }
+        />
+        <Route
+          path='/settings'
+          element={
+            <AuthentedRoute>
+              <Settings />
+            </AuthentedRoute>
+          }
+        />
+        <Route
+          path='/notes/new'
+          element={
+            <AuthentedRoute>
+              <NewNote />
+            </AuthentedRoute>
+          }
+        />
+        <Route
+          path='/notes/:id'
+          element={
+            <AuthentedRoute>
+              <Notes />
+            </AuthentedRoute>
+          }
+        />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </StyledPages>

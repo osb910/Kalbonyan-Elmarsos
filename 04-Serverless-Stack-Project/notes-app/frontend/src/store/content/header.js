@@ -19,6 +19,8 @@ const data = {
     alreadyLoggedIn: `You are aleady logged in...`,
     unconfirmedUserMsg: 'You have to complete your sign up...',
     tooMuchConfReq: 'Too much requests. Try again after 15 minutes.',
+    netError: 'Check your network connection.',
+    settings: 'Settings',
   },
   ar: {
     logo: 'صيد الخاطر',
@@ -41,6 +43,8 @@ const data = {
     alreadyLoggedIn: `سِجلّك مفتوح، اطّلع عليه...`,
     unconfirmedUserMsg: 'لا بد أن تُتمَّ التسجيل...',
     tooMuchConfReq: 'أكثرتَ الطلب. اصبر ربع ساعة ثم أعِد الكرّة.',
+    netError: 'راجع اتصالك بالشبكة.',
+    settings: 'الضبط',
   },
 };
 
