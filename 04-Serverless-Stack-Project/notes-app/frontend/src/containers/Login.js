@@ -34,14 +34,18 @@ const Login = () => {
     setSubmitMsg(uiText.tooMuchConfReq);
   };
 
+  const redirectToSignup = (msg, isNewUser) => {
+    setSubmitMsg(msg);
+    setTimeout(() => {
+      setIsLoading(false);
+      nav('/signup', {state: {email: fields.email, newUser: isNewUser}});
+    }, 2000);
+  };
+
   const resendConfirmation = async () => {
     try {
       await Auth.resendSignUp(fields.email);
-      setSubmitMsg(uiText.unconfirmedUserMsg);
-      setTimeout(() => {
-        setIsLoading(false);
-        nav('/signup', {state: {email: fields.email}});
-      }, 1500);
+      redirectToSignup(uiText.unconfirmedUserMsg, true);
     } catch (err) {
       console.log(err.name);
       if (err.name === 'LimitExceededException') {
@@ -65,6 +69,8 @@ const Login = () => {
       }, 1500);
     } catch (err) {
       console.log(err.name, err.message);
+      err.name === 'UserNotFoundException' &&
+        redirectToSignup(uiText.userNotFound, false);
       err.name === 'UserNotConfirmedException' && (await resendConfirmation());
       err.message === 'Network error' && setSubmitMsg(uiText.netError);
       setIsLoading(false);
@@ -84,7 +90,7 @@ const Login = () => {
             onChange={changeFields}
             dir='auto'
           />
-          {/* <Form.Text className='text-muted'>{uiText.loginEmailText}</Form.Text> */}
+          {/* <Form.Text className='text-muted form-text'>{uiText.loginEmailText}</Form.Text> */}
         </Form.Group>
         <Form.Group size='lg' controlId='password' className='group'>
           <Form.Label>{uiText.pass}</Form.Label>
@@ -94,7 +100,9 @@ const Login = () => {
             onChange={changeFields}
             dir='auto'
           />
-          <Form.Text className='text-muted'>{uiText.loginPassText}</Form.Text>
+          <Form.Text className='text-muted form-text'>
+            {uiText.loginPassText}
+          </Form.Text>
         </Form.Group>
         <Form.Group className='group'>
           <LoaderButton
@@ -108,7 +116,7 @@ const Login = () => {
             {uiText.login}
           </LoaderButton>
           {submitMsg && (
-            <Form.Text className='text-muted'>{submitMsg}</Form.Text>
+            <Form.Text className='text-muted form-text'>{submitMsg}</Form.Text>
           )}
         </Form.Group>
       </Form>

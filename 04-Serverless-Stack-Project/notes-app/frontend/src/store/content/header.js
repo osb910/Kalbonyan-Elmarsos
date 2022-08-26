@@ -20,6 +20,7 @@ const data = {
     unconfirmedUserMsg: 'You have to complete your sign up...',
     tooMuchConfReq: 'Too much requests. Try again after 15 minutes.',
     netError: 'Check your network connection.',
+    userNotFound: `We don't know you. Come signup...`,
     settings: 'Settings',
   },
   ar: {
@@ -31,10 +32,9 @@ const data = {
     email: 'بريدك',
     signupEmailText: 'عنوانك محفوظ',
     pass: 'أمارتُك',
-    confirmPass: 'أثبِت أمارتَك',
+    confirmPass: 'أكِّد أمارتَك',
     loginPassText: 'أأنت أنت؟',
-    signupPassText:
-      'سرُّك مكتوم لا يطّلع عليه إلا ربُّ العالمين والخادوم الأمين.',
+    signupPassText: 'لا يطّلع عليها إلا ربُّ العالمين والخادوم الأمين.',
     verify: 'تحقَّق',
     userExists: `إنا نعرفك، لعلك تريد أن تفتح سِجلَّك...`,
     confCode: 'رمز التحقق',
@@ -44,6 +44,7 @@ const data = {
     unconfirmedUserMsg: 'لا بد أن تُتمَّ التسجيل...',
     tooMuchConfReq: 'أكثرتَ الطلب. اصبر ربع ساعة ثم أعِد الكرّة.',
     netError: 'راجع اتصالك بالشبكة.',
+    userNotFound: `لا نعرفك، تعالَ واركب معنا...`,
     settings: 'الضبط',
   },
 };

@@ -1,5 +1,5 @@
 /** TODOs
- * fix lang context
+ *
  */
 
 import React, {useContext, useEffect, useState} from 'react';
@@ -9,10 +9,12 @@ import {Auth} from 'aws-amplify';
 import Navigation from './Navigation';
 import data from './store/content/home';
 import Pages from './Routes';
+import {onError} from './store/errorLib';
 
 import clickSfx from './assets/sfx/Light-Switch-ON_OFF.mp3';
 import './App.css';
 import LoadingSpinner from './components/UI/LoadingSpinner';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const StyledApp = styled.div`
   box-sizing: border-box;
@@ -29,6 +31,12 @@ const StyledApp = styled.div`
   text-align: center;
   transition: all 400ms ease;
 
+  &.rtl {
+    direction: rtl;
+    font-family: 'Lotus';
+    font-size: 1.15rem;
+  }
+
   :not(.rtl) h1,
   :not(.rtl) h2,
   :not(.rtl) h3,
@@ -38,10 +46,13 @@ const StyledApp = styled.div`
     font-family: 'PT Serif', serif;
   }
 
-  &.rtl {
-    direction: rtl;
+  &.rtl h1,
+  &.rtl h2,
+  &.rtl h3,
+  &.rtl h4,
+  &.rtl h5,
+  &.rtl h6 {
     font-family: 'Uthman Taha';
-    font-size: 1.15rem;
   }
 
   /* input[type='text'], */
@@ -61,9 +72,11 @@ const App = () => {
       console.log(res);
       setIsAuthented('LOGIN');
     } catch (err) {
-      console.log(err);
-      // if (err === 'No current user') {
-      // }
+      if (err === 'No current user') {
+        console.log(err);
+      } else {
+        onError(err);
+      }
     }
     setIsAuthenting(false);
   };
@@ -72,8 +85,8 @@ const App = () => {
     onLoad();
   }, []);
 
-  const content = data[lang];
-  document.title = `${content.appName} - ${content.appDesc}`;
+  const uiText = data[lang];
+  document.title = `${uiText.appName} - ${uiText.appDesc}`;
   document.documentElement.lang = lang;
 
   return (
@@ -83,7 +96,9 @@ const App = () => {
       ) : (
         <div dir={lang === 'ar' ? 'rtl' : 'auto'} className='container py-3'>
           <Navigation />
-          <Pages />
+          <ErrorBoundary>
+            <Pages />
+          </ErrorBoundary>
           <audio id='click-sfx' src={clickSfx} preload='none'></audio>
         </div>
       )}
