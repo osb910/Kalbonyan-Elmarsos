@@ -4,9 +4,9 @@
 
 ### expenses-app (S3-S5)
 
-- [Section 3 Code](./Projects/expenses-app/S03-project)
-- [Section 4 Code](./Projects/expenses-app/S04-project/)
-- [Section 5 Code](./Projects/expenses-app/S05-project/)
+- [Section 3 Code](./Projects/01_expenses-app/S03-project)
+- [Section 4 Code](./Projects/02_expenses-app/S04-project/)
+- [Section 5 Code](./Projects/03_expenses-app/S05-project/)
 
   <br/>
 
@@ -16,8 +16,8 @@
 
 ### goals app (S6-S7)
 
-- [Section 6 Code](./Projects/goals-app/S06-project/)
-- [Section 7 Code](./Projects/goals-app/S07-project/)
+- [Section 6 Code](./Projects/02_goals-app/S06-project/)
+- [Section 7 Code](./Projects/02_goals-app/S07-project/)
 
 <br/>
 
@@ -26,18 +26,18 @@
 
 ### Section 8-9 Project
 
-- [Project-code](./Projects/section-8-9-project)
+- [Project-code](./Projects/03_Section-8-9-project)
 - [Live Demo](https://omarsh-react-max-s08-09.netlify.app/)
 
 ### Login-app (S10)
 
-- [Project-code](./Projects/Login-app-s10/)
-- [Live Demo]()
+- [Project-code](./Projects/04_Login-app/)
+- [Live Demo](https://omarsh-react-max-s10.netlify.app/)
 
 ### Order-food App (S11)
 
-- [Project-code](./Projects/order-food-app/S11-project/)
-- [Live Demo]()
+- [Project-code](./Projects/05_food-order-app/S11-project/)
+- [Live Demo](https://omarsh-react-max-s11.netlify.app/)
 
 ### Section 12 Project
 
