@@ -64,15 +64,15 @@
 - [Project-code](./Projects/10_form-app)
 - [Live Demo](https://omarsh-react-max-s16.netlify.app/)
 
-### Order-food App (S17)
+### Food-order App (S17)
 
 - [Project Code](./Projects/05_food-order-app/S17-project/)
 - [Final Project Live Live Demo](https://reactmeals-omarsh.netlify.app/)
 
 ### Redux Counter(S18)
 
-- [Project-code](./Projects/redux-counter)
-- [Live Demo]()
+- [Project-code](./Projects/11_redux-counter)
+- [Live Demo](https://omarsh-react-max-s18.netlify.app/)
 
 ### Redux Cart(S19)
 
