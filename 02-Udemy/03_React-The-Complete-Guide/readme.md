@@ -41,18 +41,18 @@
 
 ### Section 12 Project
 
-- [Project-code](./Projects/S12-project)
-- [Live Demo]()
+- [Project-code](./Projects/06_Section-12-project)
+- [Live Demo](https://omarsh-react-max-s12.netlify.app)
 
 ### Section 13 Project
 
-- [Project-code](./Projects/S13-project)
-- [Live Demo]()
+- [Project-code](./Projects/07_Section-13-project)
+- [Live Demo](https://omarsh-react-max-s13.netlify.app/)
 
 ### movies app(S14)
 
-- [Project-code](./Projects/movies-app)
-- [Live Demo]()
+- [Project-code](./Projects/08_movies-app)
+- [Live Demo](https://omarsh-react-max-s14.netlify.app/)
 
 ### Tasks app with firebase(S15)
 
