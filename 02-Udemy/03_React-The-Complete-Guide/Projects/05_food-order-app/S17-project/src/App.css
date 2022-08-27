@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Uthman Taha';
+  src: local('KFGQPC Uthman Taha Naskh'),
+    url('./assets/fonts/UthmanTN1\ Ver10.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Uthman Taha';
+  font-weight: 700;
+  src: local('KFGQPC Uthman Taha Naskh'),
+    url('./assets/fonts/UthmanTN1B\ Ver10.otf') format('opentype');
+}
+
+.vsc-controller {
+  display: none;
+}
