@@ -76,47 +76,47 @@
 
 ### Redux Cart(S19)
 
-- [Project-code](./Projects/redux-cart)
-- [Live Demo]()
+- [Project-code](./Projects/12_redux-cart)
+- [Live Demo](https://omarsh-react-max-s19.netlify.app/)
 
 ### Quotes app(S20)
 
-- [Project-code](./Projects/quotes-app)
+- [Project-code](./Projects/13_quotes-app)
 - [Live Demo]()
 
 ### Authentication-page(S22)
 
-- [Project-code](./Projects/Authentication-page)
+- [Project-code](./Projects/14_authentication-page)
 - [Live Demo]()
 
 ### Meetsup app(S23)
 
-- [Project-code](./Projects/meetsup-app)
+- [Project-code](./Projects/15_meetsup-app)
 - [Live Demo]()
 
 ### Animation-app (S24)
 
-- [Project-code](./Projects/animation-app)
+- [Project-code](./Projects/16_animation-app)
 - [Live Demo]()
 
 ### Products-app(S25)
 
-- [Project-code](./Projects/Products-app)
+- [Project-code](./Projects/17_products-app)
 - [Live Demo]()
 
 ### todo-app-TS(S27)
 
-- [Project-code](./Projects/todo-app-TS)
+- [Project-code](./Projects/18_todo-app-ts/)
 - [Live Demo]()
 
 ### ingredients-app(S28)
 
-- [Project-code](./Projects/ingredients-app/)
+- [Project-code](./Projects/19_ingredients-app/)
 - [Live Demo]()
 
 ### Section 29 Project
 
-- [Project-code](./Projects/Section-29/)
+- [Project-code](./Projects/20_Section-29/)
 - [Live Demo]()
 
 ---
