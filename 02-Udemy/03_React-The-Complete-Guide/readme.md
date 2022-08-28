@@ -82,7 +82,7 @@
 ### Quotes app(S20)
 
 - [Project-code](./Projects/13_quotes-app)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s20.netlify.app)
 
 ### Authentication-page(S22)
 
