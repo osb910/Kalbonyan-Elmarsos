@@ -17,27 +17,27 @@
 ### Pig Game
 
 - [Project-code](./Projects/Pig-Game)
-- [Live Demo]()
+- [Live Demo](https://pig-game-omarsh.netlify.app/)
 
 ### Bankist
 
 - [Project-code](./Projects/Bankist)
-- [Live Demo]()
+- [Live Demo](https://bankist-app-omarsh.netlify.app/)
 
 ### Bankist Site
 
 - [Project-code](./Projects/Bankist-Site)
-- [Live Demo]()
+- [Live Demo](https://bankist-omarsh.netlify.app/)
 
 ### Mapty
 
 - [Project-code](./Projects/Mapty)
-- [Live Demo]()
+- [Live Demo](https://mapty-omarsh.netlify.app/)
 
 ### Forkify
 
 - [Project-code](./Projects/Forkify)
-- [Live Demo]()
+- [Live Demo](https://forkify-omarsh.netlify.app/)
 
 ---
 
