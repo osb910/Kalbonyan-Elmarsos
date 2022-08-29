@@ -91,8 +91,8 @@
 
 ### Meetsup app(S23)
 
-- [Project-code](./Projects/15_meetsup-app)
-- [Live Demo]()
+- [Project-code](./Projects/15_meetups-app)
+- [Live Demo](https://nextjs-course-demo-osb910.vercel.app/)
 
 ### Animation-app (S24)
 
