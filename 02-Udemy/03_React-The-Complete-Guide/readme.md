@@ -5,8 +5,8 @@
 ### expenses-app (S3-S5)
 
 - [Section 3 Code](./Projects/01_expenses-app/S03-project)
-- [Section 4 Code](./Projects/02_expenses-app/S04-project/)
-- [Section 5 Code](./Projects/03_expenses-app/S05-project/)
+- [Section 4 Code](./Projects/01_expenses-app/S04-project/)
+- [Section 5 Code](./Projects/01_expenses-app/S05-project/)
 
   <br/>
 
@@ -112,12 +112,12 @@
 ### ingredients-app(S28)
 
 - [Project-code](./Projects/19_ingredients-app/)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s28.netlify.app/)
 
 ### Section 29 Project
 
 - [Project-code](./Projects/20_Section-29/)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-29.netlify.app/)
 
 ---
 
@@ -131,7 +131,7 @@
 
 <br>
 
-![Certificate](https://via.placeholder.com/468x300?text=Certificate+Here)
+![Certificate](https://raw.githubusercontent.com/osb910/Kalbonyan-Elmarsos/ab52a8be45f917b8d768afe68201fd8491dedd73/02-Udemy/03_React-The-Complete-Guide/Certificate_React-The-Complete-Guide.pdf)
 
 <br>
 
