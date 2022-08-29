@@ -97,12 +97,12 @@
 ### Animation-app (S24)
 
 - [Project-code](./Projects/16_animation-app)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s24.netlify.app/)
 
 ### Products-app(S25)
 
 - [Project-code](./Projects/17_products-app)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s25.netlify.app/)
 
 ### todo-app-TS(S27)
 
