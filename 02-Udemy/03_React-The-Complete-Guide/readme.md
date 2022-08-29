@@ -49,17 +49,17 @@
 - [Project-code](./Projects/07_Section-13-project)
 - [Live Demo](https://omarsh-react-max-s13.netlify.app/)
 
-### movies app(S14)
+### movies app (S14)
 
 - [Project-code](./Projects/08_movies-app)
 - [Live Demo](https://omarsh-react-max-s14.netlify.app/)
 
-### Tasks app with firebase(S15)
+### Tasks app with firebase (S15)
 
 - [Project-code](./Projects/09_task-app-firbase/)
 - [Live Demo](https://omarsh-react-max-s15.netlify.app/)
 
-### Form-app(S16)
+### Form-app (S16)
 
 - [Project-code](./Projects/10_form-app)
 - [Live Demo](https://omarsh-react-max-s16.netlify.app/)
@@ -69,27 +69,27 @@
 - [Project Code](./Projects/05_food-order-app/S17-project/)
 - [Final Project Live Live Demo](https://reactmeals-omarsh.netlify.app/)
 
-### Redux Counter(S18)
+### Redux Counter (S18)
 
 - [Project-code](./Projects/11_redux-counter)
 - [Live Demo](https://omarsh-react-max-s18.netlify.app/)
 
-### Redux Cart(S19)
+### Redux Cart (S19)
 
 - [Project-code](./Projects/12_redux-cart)
 - [Live Demo](https://omarsh-react-max-s19.netlify.app/)
 
-### Quotes app(S20)
+### Quotes app (S20)
 
 - [Project-code](./Projects/13_quotes-app)
 - [Live Demo](https://omarsh-react-max-s20.netlify.app)
 
-### Authentication-page(S22)
+### Authentication-page (S22)
 
 - [Project-code](./Projects/14_authentication-page)
 - [Live Demo](https://omarsh-react-max-s22.netlify.app/)
 
-### Meetsup app(S23)
+### Meetsup app (S23)
 
 - [Project-code](./Projects/15_meetups-app)
 - [Live Demo](https://nextjs-course-demo-osb910.vercel.app/)
@@ -99,17 +99,17 @@
 - [Project-code](./Projects/16_animation-app)
 - [Live Demo](https://omarsh-react-max-s24.netlify.app/)
 
-### Products-app(S25)
+### Products-app (S25)
 
 - [Project-code](./Projects/17_products-app)
 - [Live Demo](https://omarsh-react-max-s25.netlify.app/)
 
-### todo-app-TS(S27)
+### todo-app-TS (S27)
 
 - [Project-code](./Projects/18_todo-app-ts/)
 - [Live Demo](https://omarsh-react-max-s27.netlify.app/)
 
-### ingredients-app(S28)
+### ingredients-app (S28)
 
 - [Project-code](./Projects/19_ingredients-app/)
 - [Live Demo](https://omarsh-react-max-s28.netlify.app/)
