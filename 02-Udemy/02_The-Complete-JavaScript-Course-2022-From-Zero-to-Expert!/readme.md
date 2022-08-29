@@ -1,8 +1,8 @@
 # The Complete JavaScript Course 2022: From Zero to Expert!
 
-## Challenges
+<!-- ## Challenges -->
 
-- [x] [JavaScript Fundamentals – Part 1 ](./Challenges/JavaScript%20Fundamentals%20%E2%80%93%20Part%201/)
+<!-- - [x] [JavaScript Fundamentals – Part 1 ](./Challenges/JavaScript%20Fundamentals%20%E2%80%93%20Part%201/)
 - [x] [JavaScript Fundamentals – Part 2](./Challenges/JavaScript%20Fundamentals%20%E2%80%93%20Part%202/)
 - [x] [Developer Skills & Editor Setup ](./Challenges/Developer%20Skills%20%26%20Editor%20Setup/)
 - [x] [JavaScript in the Browser: DOM and Events](./Challenges/JavaScript%20in%20the%20Browser%20DOM%20and%20Events/)
@@ -10,7 +10,7 @@
 - [x] [A Closer Look at Functions](./Challenges/A%20Closer%20Look%20at%20Functions/)
 - [x] [Working With Arrays.](./Challenges/Working%20With%20Arrays/)
 - [x] [Object Oriented Programming (OOP)](<./Challenges/Object%20Oriented%20Programming%20(OOP)/>)
-- [x] [Asynchronous JavaScript](./Challenges/Asynchronous%20JavaScript/)
+- [x] [Asynchronous JavaScript](./Challenges/Asynchronous%20JavaScript/) -->
 
 ## Projects
 
@@ -49,4 +49,4 @@
 
 [Course-Link](https://www.udemy.com/course/the-complete-javascript-course/)<br>
 
-![Certificate](https://via.placeholder.com/468x300?text=Certificate+Here)
+![Certificate](https://raw.githubusercontent.com/osb910/Kalbonyan-Elmarsos/32be81409bfbff9457f31ac4bb7198b7fce38800/02-Udemy/02_The-Complete-JavaScript-Course-2022-From-Zero-to-Expert!/Certificate_The-Complete-JavaScript-Course-2022-From-Zero-to-Expert.pdf)
