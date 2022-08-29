@@ -87,7 +87,7 @@
 ### Authentication-page(S22)
 
 - [Project-code](./Projects/14_authentication-page)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s22.netlify.app/)
 
 ### Meetsup app(S23)
 
