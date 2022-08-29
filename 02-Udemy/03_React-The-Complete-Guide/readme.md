@@ -107,7 +107,7 @@
 ### todo-app-TS(S27)
 
 - [Project-code](./Projects/18_todo-app-ts/)
-- [Live Demo]()
+- [Live Demo](https://omarsh-react-max-s27.netlify.app/)
 
 ### ingredients-app(S28)
 
