@@ -31,16 +31,16 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 
 - ## Programming foundations path and HTML and CSS
 
-  - [x] ` done` ` 2h 6m 40s` - 01 - [Programming Foundations: Fundamentals](01-Linkedin-Learning/01_Programming-Foundations-Fundamentals/)
-  - [x] ` done` ` 2h 4m 44s` - 02 - [Programming Foundations: Beyond the Fundamentals](01-Linkedin-Learning/02_Programming-Foundations-Beyond-The-Fundamentals)
-  - [x] ` done` ` 2h 40m 37s` - 03 - [Programming Foundations: Object-Oriented Design](01-Linkedin-Learning/03_Programming-Foundations-Object-Oriented-Design/)
-  - [x] ` done` ` 2h 20m 56s` - 04 - [Programming Foundations: Data Structures](01-Linkedin-Learning/04_Programming-Foundations-Data-Structures)
-  - [x] ` done` ` 1h 45m 30s` - 05 - [Programming Foundations: Algorithms](01-Linkedin-Learning/05_Programming-Foundations-Algorithms)
-  - [x] ` done` ` 1h 44m 23s` - 06 - [Programming Foundations: Design Patterns](01-Linkedin-Learning/06_Programming-Foundations-Design-Patterns)
-  - [x] ` done` ` 1h 25m 15s` - 07 - [Programming Foundations: Databases](01-Linkedin-Learning/07_Programming-Foundations-Databases)
-  - [x] ` done` ` 1h 14m 28s` - 08 - [Programming Foundations: APIs and Web Services](01-Linkedin-Learning/08_Programming-Foundations-APIs-and-Web-Services)
-  - [x] ` done` ` 53m 51s` - 09 - [Programming Foundations: Software Testing/QA](01-Linkedin-Learning/09_Programming-Foundations-Software-Testing-QA)
-  - [x] ` done` `2h 11m` - 10 - [Learning GitHub](01-Linkedin-Learning/10-Learning-GitHub)
+  - [x] ` done` ` 2h 6m 40s` - 01 - [Programming Foundations: Fundamentals](01-LinkedIn-Learning/01_Programming-Foundations-Fundamentals/)
+  - [x] ` done` ` 2h 4m 44s` - 02 - [Programming Foundations: Beyond the Fundamentals](01-LinkedIn-Learning/02_Programming-Foundations-Beyond-The-Fundamentals)
+  - [x] ` done` ` 2h 40m 37s` - 03 - [Programming Foundations: Object-Oriented Design](01-LinkedIn-Learning/03_Programming-Foundations-Object-Oriented-Design/)
+  - [x] ` done` ` 2h 20m 56s` - 04 - [Programming Foundations: Data Structures](01-LinkedIn-Learning/04_Programming-Foundations-Data-Structures)
+  - [x] ` done` ` 1h 45m 30s` - 05 - [Programming Foundations: Algorithms](01-LinkedIn-Learning/05_Programming-Foundations-Algorithms)
+  - [x] ` done` ` 1h 44m 23s` - 06 - [Programming Foundations: Design Patterns](01-LinkedIn-Learning/06_Programming-Foundations-Design-Patterns)
+  - [x] ` done` ` 1h 25m 15s` - 07 - [Programming Foundations: Databases](01-LinkedIn-Learning/07_Programming-Foundations-Databases)
+  - [x] ` done` ` 1h 14m 28s` - 08 - [Programming Foundations: APIs and Web Services](01-LinkedIn-Learning/08_Programming-Foundations-APIs-and-Web-Services)
+  - [x] ` done` ` 53m 51s` - 09 - [Programming Foundations: Software Testing/QA](01-LinkedIn-Learning/09_Programming-Foundations-Software-Testing-QA)
+  - [x] ` done` `2h 11m` - 10 - [Learning GitHub](01-LinkedIn-Learning/10-Learning-GitHub)
   - [x] ` done` `37h 30m` - 11 - [Build Responsive Real-World Websites with HTML and CSS](02-Udemy/01_Build-Responsive-Real-World-Websites-with-HTML-and-CSS)
 
   <br />
