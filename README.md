@@ -40,7 +40,7 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
   - [x] ` done` ` 1h 25m 15s` - 07 - [Programming Foundations: Databases](01-LinkedIn-Learning/07_Programming-Foundations-Databases)
   - [x] ` done` ` 1h 14m 28s` - 08 - [Programming Foundations: APIs and Web Services](01-LinkedIn-Learning/08_Programming-Foundations-APIs-and-Web-Services)
   - [x] ` done` ` 53m 51s` - 09 - [Programming Foundations: Software Testing/QA](01-LinkedIn-Learning/09_Programming-Foundations-Software-Testing-QA)
-  - [x] ` done` `2h 11m` - 10 - [Learning GitHub](01-LinkedIn-Learning/10-Learning-GitHub)
+  - [x] ` done` `2h 11m` - 10 - [Learning GitHub](01-LinkedIn-Learning/10_Learning-GitHub)
   - [x] ` done` `37h 30m` - 11 - [Build Responsive Real-World Websites with HTML and CSS](02-Udemy/01_Build-Responsive-Real-World-Websites-with-HTML-and-CSS)
 
   <br />
@@ -62,15 +62,15 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 
 ## JavaScript
 
-- [x] ` done` `69h` - 13 - [The Complete JavaScript Course 2022: From Zero to Expert!](./02-Udemy/02_The-Complete-JavaScript-Course-2022-From-Zero-to-Expert!)
+- [x] ` done` `69h` - 12 - [The Complete JavaScript Course 2022: From Zero to Expert!](./02-Udemy/02_The-Complete-JavaScript-Course-2022-From-Zero-to-Expert!)
 
 ## ReactJs
 
-- [x] ` done` `48h` - 14 - [React - The Complete Guide (incl Hooks, React Router, Redux)](./02-Udemy/03_React-The-Complete-Guide)
+- [x] ` done` `48h` - 13 - [React - The Complete Guide (incl Hooks, React Router, Redux)](./02-Udemy/03_React-The-Complete-Guide)
 
 ## NodeJs
 
-- [x] ` done` `46h` - 15 - [Complete NodeJS Developer in 2022 (GraphQL, MongoDB, + more)](./02-Udemy/04_Complete-NodeJS-Developer-in-2022)
+- [x] ` done` `46h` - 14 - [Complete NodeJS Developer in 2022 (GraphQL, MongoDB, + more)](./02-Udemy/04_Complete-NodeJS-Developer-in-2022)
 
 <img src="https://img.shields.io/badge/Total%20Number%20Of%20Hours%20For%20This%20Courses-163h-blue">
 
@@ -86,10 +86,11 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 
 ![100%](https://progress-bar.dev/100/?title=Done&color=babaca)
 
-- [x] `done` `16h` - 16 - [AWS Certified Cloud Practitioner (CLF-C01)](<./03-A-Cloud-Guru/AWS-Certified-Cloud-Practitioner-(CLF-C01)>)
-- [x] `done` `42h` - 17 - [AWS Certified Solutions Architect Associate (SAA-C02)](<./03-A-Cloud-Guru/AWS-Certified-Solutions-Architect-Associate-(SAA-C02)>)
+- [x] `done` `16h` - 15 - [AWS Certified Cloud Practitioner (CLF-C01)](<./03-A-Cloud-Guru/AWS-Certified-Cloud-Practitioner-(CLF-C01)>)
+- [x] `done` `42h` - 16 - [AWS Certified Solutions Architect Associate (SAA-C02)](<./03-A-Cloud-Guru/AWS-Certified-Solutions-Architect-Associate-(SAA-C02)>)
+- [x] `done` `13h` - 17 - [AWS Certified Cloud Practitioner 2020](./03-A-Cloud-Guru/AWS-Certified-Cloud-Practitioner-2020)
 
-<img src="https://img.shields.io/badge/Total%20Number%20Of%20Hours%20For%20This%20Courses-58h-blue">
+<img src="https://img.shields.io/badge/Total%20Number%20Of%20Hours%20For%20This%20Courses-71h-blue">
 <br />
 
 ---
