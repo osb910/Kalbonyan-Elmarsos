@@ -16,7 +16,7 @@ Kalbonyan Elmarsos is an Egyptian non-profit organization whose goal is to help 
 <img src="https://img.shields.io/badge/Total%20Number%20Of%20Hours%20For%20All%20Courses-%2B200h-blue">
 <br>
 
-> Note click on the name of the course to see its repository that contains projects, challenges and certificates
+> Click on the name of the course to see its repository that contains projects, challenges and certificates
 
 ---
 
