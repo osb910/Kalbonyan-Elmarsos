@@ -14,6 +14,8 @@
 
 ## Projects
 
+[Projects](Projects)
+
 ### Pig Game
 
 - [Project-code](./Projects/Pig-Game)
