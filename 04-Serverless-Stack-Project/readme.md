@@ -28,4 +28,4 @@
 - Attach an image with your note
 - Edit & delete notes
 - Settings page
-- RTL support with Arabic localiztion
+- RTL support with Arabic localization
