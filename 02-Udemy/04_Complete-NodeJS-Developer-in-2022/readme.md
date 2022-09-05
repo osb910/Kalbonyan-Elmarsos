@@ -7,7 +7,7 @@
 ### Multiplayer Pong
 
 - [Project-code](./Projects/multiplayer-pong)
-- [Live Demo]()
+- [Live Demo](https://omarsh-pong.herokuapp.com/)
 
 ### Planet Finder
 
@@ -16,7 +16,7 @@
 ### NASA Mission Control
 
 - [Project-code](./Projects/nasa-project)
-- [Live Demo]()
+- [Live Demo](http://52.47.126.241:8000/)
 
 ---
 
